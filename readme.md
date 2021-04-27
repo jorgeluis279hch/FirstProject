@@ -16,6 +16,13 @@ Historia del usuario (opcional): Puedo solicitar mi tiempo de ubicación actual
 Historia del usuario (opcional): Puedo convertir la temperatura en Celcius a Fahrenheit y viceversa
 Icono: https://google.github.io/material-design-icons/
 
-API: https://www.metaweather.com/api/
+
 
 Consejos: Para desarrolladores front-end, puede usar https://cors-anywhere.herokuapp.com/ para ayudar con el acceso a datos de otros sitios web que normalmente están prohibidos por la política de mismo origen de los navegadores web
+
+no nesecita ninguna libreria 
+
+la API usada es 
+// const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
+
+
