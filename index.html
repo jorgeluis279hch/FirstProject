@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="css\general-styles.css">
+  <link rel="stylesheet" href="./icons/style.css">
+  <title>WeatherApp</title>
+</head>
+
+<body>
+  <div class="container-fluid">
+
+    <div class="side-form menu__side-hidden">
+      <div class="form__closer">
+        <span class="icon-arrow-left"></span>
+      </div>
+      <form class="form-inline">
+        <div class="form__search form-group ">
+          <span class="icon-search"></span>
+          <input class="form-control" type="text" name="search" id="search">
+          <button class=" btn btn-outline-primary">Search</button>
+        </div>
+      </form>
+      <div class="form__result">
+        <ul>
+
+        </ul>
+      </div>
+
+    </div>
+    <div class="side-menu col-sm-3">
+
+      <div class="menu__search">
+        <button id="btn__search" class="btn btn-outline-primary">Search for place</button>
+        <span class="icon-target"></span>
+      </div>
+
+      <img id="cloud__img" src="./resource/nube.svg" alt="cloud weather" srcset="">
+      <div class="menu__state">
+        <img id="nube__img" src="./resource/svg/rainy.svg" alt="" srcset="">
+        <div id="menu__temperature">
+          <h3 id="temperatura">Temperatura</h3>
+          <div class="state__text">
+          </div>
+        </div>
+      </div>
+      <div class="menu__info">
+        <div class="info__date">
+          <span id="date">Today - <span class="date__system"></span></span>
+        </div>
+        <div class="info__locate">
+          <span class="icon-location"></span>
+          <span id="locate"></span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="main col-sm-9">
+      <div class="main__temp">
+        <div>
+          <b id="celcious" class="temp__selected">°C</b>
+          <b id="kelvin">°F</b>
+        </div>
+      </div>
+      <div class="main__week">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <h3 class="main__descrip">Today's Hightlights</h3>
+      <div class="main__today">
+        <div class="main__box">
+
+          <div class="box__wind"></div>
+          <div class="box__visibility"></div>
+        </div>
+        <div class="main__box">
+
+          <div class="box__humedad"></div>
+          <div class="box__preasure"></div>
+        </div>
+      </div>
+      <div class="main__created">
+        Github - @jorgeuis279hch
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="js\main.js"></script>
+
+
+</body>
+
+</html>
