@@ -58,3 +58,9 @@
   width: 80%;
   height: 50%;
 }
+
+.week__day{
+  margin: 10px auto;
+  text-align: center;
+  font-size: .8rem;
+}
