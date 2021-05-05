@@ -178,6 +178,7 @@ temps[1].addEventListener('click', tempSelect);
 
 insertTemp();
 insertDateLocation();
+insertInfoBoxes();
 
 
 

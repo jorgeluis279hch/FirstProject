@@ -28,14 +28,11 @@
         </div>
       </form>
       <div class="form__result">
-        <ul>
-
+        <ul class="result__history">
         </ul>
       </div>
-
     </div>
     <div class="side-menu col-sm-3">
-
       <div class="menu__search">
         <button id="btn__search" class="btn btn-outline-primary">Search for place</button>
         <span class="icon-target"></span>
@@ -62,7 +59,7 @@
       </div>
     </div>
 
-    <div class="main col-sm-9">
+    <div class="main">
       <div class="main__temp">
         <div>
           <b id="celcious" class="temp__selected">°C</b>
@@ -70,34 +67,83 @@
         </div>
       </div>
       <div class="main__week">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+          <h4 class="week__day">Tomorrow</h4>
+          <img class="day__img" src="./resource/nube_nube.jpg" alt="weather day img">
+          <div class="day__temp"></div>
+        </div>
+        <div>
+          <h4 class="week__day" id="afther__tomorrow"></h4>
+          <img class="day__img" src="./resource/nube_nube.jpg" alt="weather day img">
+          <div class="day__temp"></div>
+        </div>
+        <div>
+          <h4 class="week__day"></h4>
+          <img class="day__img" src="./resource/nube_nube.jpg" alt="weather day img">
+          <div class="day__temp"></div>
+        </div>
+        <div>
+          <h4 class="week__day"></h4>
+          <img class="day__img" src="./resource/nube_nube.jpg" alt="weather day img">
+          <div class="day__temp"></div>
+        </div>
+        <div>
+          <h4 class="week__day"></h4>
+          <img class="day__img" src="./resource/nube_nube.jpg" alt="weather day img">
+          <div class="day__temp"></div>
+        </div>
       </div>
       <h3 class="main__descrip">Today's Hightlights</h3>
       <div class="main__today">
         <div class="main__box">
-
-          <div class="box__wind"></div>
-          <div class="box__visibility"></div>
+          <div class="box__head">
+            <h4>Wind status</h4>
+            <span class="box__wind""></span>
+            <h5 class=" icon-compass">WSW</h5>
+          </div>
+          <div class="box__head">
+            <h4>Visibility</h4>
+            <div class="head__descrip">
+              <span class="box__visibility"></span>
+              <span>miles</span>
+            </div>
+          </div>
         </div>
         <div class="main__box">
-
-          <div class="box__humedad"></div>
-          <div class="box__preasure"></div>
+          <div class="box__head">
+            <h4>Humidity</h4>
+            <div class="head__descrip" id="descrip">
+              <span class="box__humedad"></span>
+              <span>%</span>
+            </div>
+            <div id="background">
+              <div id="fill"></div>
+            </div>
+          </div>
+          <div class="box__head">
+            <h4>Air Preasure</h4>
+            <div class="head__descrip">
+              <span class="box__preasure"></span>
+              <span>mb</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="main__created">
         Github - @jorgeuis279hch
       </div>
-
+      <!-- <input type="color" name="" id="paleta__color"> -->
     </div>
   </div>
 
 
   <script src="js\main.js"></script>
+
+  <!-- <script>
+    const color = document.querySelector('#paleta__color');
+    color.addEventListener('change', e => console.log(e.target.value));
+
+  </script> -->
 
 
 </body>

@@ -1,0 +1,60 @@
+.main__box .box__head h4 
+{
+  text-align: center;
+}
+
+.box__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#background #fill, 
+.box__head > #background {
+  height: 10px;
+  margin: 0px;
+  padding: 0px;
+  border-radius: 2rem;
+}
+
+.box__head > #background {
+  width: 90%;
+  background-color: grey;
+  position: relative;
+}
+
+#background #fill {
+  width: 21%;
+  position: absolute;
+  background-color: orange;
+  top:0;
+  left: 0;
+}
+
+.box__head div.head__descrip#descrip,
+.box__head div.head__descrip {
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  font-size: 1.5rem;
+}
+.box__wind {
+  font-size: 1.5rem;
+}
+.box__visibility, 
+.box__humedad,
+.box__preasure {
+  margin: 0px 10px;
+
+}
+.main__week div .day__temp {
+  background-color: transparent;
+  width: 100%;
+  height: 20px;
+}
+.day__img {
+  margin: 0px auto;
+  display: flex;
+  width: 80%;
+  height: 50%;
+}

@@ -1,9 +1,12 @@
+@import url('./main-styles.css');
+
 :root {
   --color-side-menu:#3e4153;
   --main-color:#11182e;
   --whiteColor:rgb(214, 214, 214);
   --blueColor:#57a7fc;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -203,7 +206,7 @@ b.temp__selected {
 .main__today .main__box div{
   width: 270px;
   margin: 10px;
-  height: 120px;
+  height: 140px;
   background-color: var(--color-side-menu);
 }
 
