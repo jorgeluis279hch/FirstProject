@@ -24,7 +24,7 @@
 }
 
 #background #fill {
-  width: 21%;
+  width: 0%;
   position: absolute;
   background-color: orange;
   top:0;
@@ -63,4 +63,46 @@
   margin: 10px auto;
   text-align: center;
   font-size: .8rem;
+}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px dashed rgb(236, 214, 15);
+  animation: spin-rotate 2s infinite linear;
+  border-left-width: 10px;
+  border-left-style: groove;
+  border-left-color: rgb(236, 214, 15);
+  border-block-color: transparent;
+  /* border-right: groove; */
+  border-right-style: groove;
+  border-right-width: 10px;
+  border-right-color: rgb(236, 214, 15);
+}
+.preloader {
+  /* position: absolute; */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(27, 27, 58);
+  transition-property: height, overflow, max-height;
+  transition-duration:.5s;
+}
+
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  animation: none;
+}
+
+@keyframes spin-rotate {
+  from {
+    transform: initial;
+  }to {
+    transform: rotate(360deg);
+  }
 }

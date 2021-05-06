@@ -1,11 +1,18 @@
-
 const btnSearch = document.querySelector('#btn__search');
 const formCloser = document.querySelector('.form__closer');
 const sideMenu = document.querySelector('.side-form');
 const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
+let queryWeather;
 
 function hiddeElement() {
   sideMenu.classList.toggle('menu__side-hidden');
+}
+
+function removeLoader() {
+	const loader = document.querySelector('.preloader');
+	const load = document.querySelector('.spinner');
+	loader.classList.add('hidden');
+	load.classList.add('hidden');
 }
 
 btnSearch.addEventListener('click', hiddeElement);
@@ -58,32 +65,26 @@ async function getLocation() {
 
 }
 
-const newWeather = async () =>  {  
+async function newWeather() {  
   try {
     const API_KEY = "0237bbf40ed5274eeb64064949484512";
-    
     const map = await getLocation();
-
     let url = (map.type === 'ip') 
       ? `${API_URL}?q=${map.city}&appid=${API_KEY}`
       : `${API_URL}?lat=${map.latitud}&lon=${map.longitud}&appid=${API_KEY}`;
-    
-    fetch(url)
-      .then(res => res.json())
-      .then(res => console.log(res))
-      .catch(err => console.log('error'));
-
+    const fetchingAPI = await fetch(url);
+    queryWeather = await fetchingAPI.json();
+    insertInformation();
+    removeLoader();
   } catch (err) {
     console.log(err);
   }
 }
 
-queryWeather = newWeather();
-
-// La temperatura T en grados Celsius (° C) 
-// es igual a la temperatura T en Kelvin (K) menos 273.15:
-// T (° C) = T (K) - 273.15
 function insertTemp(){
+  // La temperatura T en grados Celsius (° C) 
+  // es igual a la temperatura T en Kelvin (K) menos 273.15:
+  // T (° C) = T (K) - 273.15
   temperaturaCelcius = Math.round(queryWeather.main.temp - 273.15, 2);
   // La temperatura T en grados Fahrenheit (° F) es igual a la temperatura 
   // T en Kelvin (K) multiplicado por 9/5, menos 459,67:
@@ -95,9 +96,8 @@ function insertTemp(){
   
   let temp = temperaturaActual.id;
   setTemperatura.textContent = (temp == 'celcious') 
-  ? temperaturaCelcius + "°c"
-  : temperaturaFarenheit + "°f";
-  
+    ? temperaturaCelcius + "°c"
+    : temperaturaFarenheit + "°f";  
 }
 
 function insertDateLocation(){
@@ -134,7 +134,7 @@ function* weekDay(list, current = 0) {
   }
 }
 
-const realDate = () => {
+function realDate()  {
   const date = new Date();
   let dayNames = [];
   const listDays = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'];
@@ -152,25 +152,25 @@ function insertDate() {
   let tomorrow = document.querySelectorAll('.week__day'), 
       i = 1; 
       // comienza a partir del 1 porque en html se escribe el dia siguiente como 'mañana'
-  
+  const fill = document.querySelector('#fill');
+  fill.style.width = queryWeather.main.humidity.toString() + '%';
+
   for (let {value} of realDate()) {
     tomorrow[i].textContent = value;
     i++;
   }
 }
 
-async function insertInformation () {
-
-  const temps = await document.querySelectorAll('.main__temp > div > b');
+function insertInformation() {
+  const temps = document.querySelectorAll('.main__temp > div > b');
   temps[0].addEventListener('click', tempSelect);
   temps[1].addEventListener('click', tempSelect);
   
-  
-  await insertDate();
-  await insertTemp();
-  await insertDateLocation();
-  await insertInfoBoxes();
+  insertDate();
+  insertTemp();
+  insertDateLocation();
+  insertInfoBoxes();
 }
 
+newWeather();
 
-insertInformation();
